@@ -25,11 +25,11 @@ public class TabellMengde<T> implements MengdeADT<T> {
     @Override
     public boolean erDelmengdeAv(MengdeADT<T> annenMengde) {
         for (int i = 0; i < antall; i++) {
-            if (annenMengde.inneholder(tabell[i])) {
-                return true;
+            if (!annenMengde.inneholder(tabell[i])) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     @Override
@@ -45,10 +45,10 @@ public class TabellMengde<T> implements MengdeADT<T> {
     @Override
     public boolean erDisjunkt(MengdeADT<T> annenMengde) {
         for (int i = 0; i < antall; i++) {
-            if (!annenMengde.inneholder(tabell[i]));
-            return true;
+            if (annenMengde.inneholder(tabell[i]));
+            return false;
         }
-        return false;
+        return true;
     }
 
     @Override
