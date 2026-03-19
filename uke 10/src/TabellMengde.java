@@ -4,6 +4,12 @@ public class TabellMengde<T> implements MengdeADT<T> {
     private T[] tabell;
     private int antall;
 
+    @SuppressWarnings("unchecked")
+    public TabellMengde() {
+        tabell = (T[]) new Object[10]; // startstørrelse
+        antall = 0;
+    }
+
     @Override
     public boolean erTom() {
         if (antall == 0) {
@@ -15,7 +21,7 @@ public class TabellMengde<T> implements MengdeADT<T> {
     @Override
     public boolean inneholder(T element) {
         for (int i = 0; i < antall; i++) {
-            if (tabell[i] == element) {
+            if (tabell[i].equals(element)) {
                 return true;
             }
         }
@@ -34,19 +40,16 @@ public class TabellMengde<T> implements MengdeADT<T> {
 
     @Override
     public boolean erLik(MengdeADT<T> annenMengde) {
-        for (int i = 0; i < antall; i++) {
-            if (annenMengde.equals(tabell[i])) {
-                return true;
-            }
-        }
-        return false;
+        return this.antall == annenMengde.antallElementer()
+                && this.erDelmengdeAv(annenMengde);
     }
 
     @Override
     public boolean erDisjunkt(MengdeADT<T> annenMengde) {
         for (int i = 0; i < antall; i++) {
-            if (annenMengde.inneholder(tabell[i]));
-            return false;
+            if (annenMengde.inneholder(tabell[i])) {
+                return false;
+            }
         }
         return true;
     }
@@ -57,7 +60,7 @@ public class TabellMengde<T> implements MengdeADT<T> {
 
         for (int i = 0; i < antall; i++) {
             if (annenMengde.inneholder(tabell[i])) {
-                resultat.inneholder(tabell[i]);
+                resultat.leggTil(tabell[i]);
             }
         }
         return resultat;
@@ -84,7 +87,7 @@ public class TabellMengde<T> implements MengdeADT<T> {
 
         for (int i = 0; i < antall; i++) {
             if (!annenMengde.inneholder(tabell[i])) {
-                resultat.inneholder(tabell[i]);
+                resultat.leggTil(tabell[i]);
             }
         }
         return resultat;
