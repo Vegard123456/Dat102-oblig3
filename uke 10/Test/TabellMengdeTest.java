@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TabellMengdeTest {
-
     private TabellMengde<Integer> m1;
     private TabellMengde<Integer> m2;
 

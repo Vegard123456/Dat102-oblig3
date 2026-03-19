@@ -107,5 +107,5 @@ public class LenketMengdeTest {
         m1.leggTilAlleFra(m2);
         assertTrue(m1.inneholder(5));
         assertEquals(5, m1.antallElementer());
-    }3
+    }
 }
