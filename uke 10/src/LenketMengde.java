@@ -1,6 +1,4 @@
-package Oppgave;
-
-import ADT.MengdeADT;
+import java.util.Arrays;
 
 public class LenketMengde<T> implements MengdeADT<T> {
     private Node<T> start;

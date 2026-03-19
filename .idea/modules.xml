@@ -3,8 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Dat102-oblig3.iml" filepath="$PROJECT_DIR$/.idea/Dat102-oblig3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/uke 10/Oppgave.iml" filepath="$PROJECT_DIR$/uke 10/Oppgave.iml" />
-      <module fileurl="file://$PROJECT_DIR$/uke 11/uke 11.iml" filepath="$PROJECT_DIR$/uke 11/uke 11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uke 10/src.iml" filepath="$PROJECT_DIR$/uke 10/src.iml" />
     </modules>
   </component>
 </project>
